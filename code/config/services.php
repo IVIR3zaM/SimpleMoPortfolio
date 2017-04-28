@@ -25,4 +25,12 @@ $di->setShared('db', function () use ($di) {
     ]);
 });
 
+$di->setShared('queue', function () use ($di) {
+    $config = $di->get('config');
+    $class = $config->queue->class;
+    $params = $config->queue->params->toArray();
+    return new $class($params);
+});
+
+
 return $di;
