@@ -1,6 +1,7 @@
 <?php
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Mvc\Micro;
+use IVIR3zaM\SimpleMoPortfolio\Controllers\MoController;
 
 try {
     require dirname(__DIR__) . '/vendor/autoload.php';
@@ -17,10 +18,11 @@ try {
      * Routing part of our micro application
      */
 
+    // Receive Mo action. it must to be an put action
     $app->get(
         '/',
         function () {
-            return '{"status": "ok"}'."\n";
+            return (new MoController())->receiveAction();
         }
     );
 

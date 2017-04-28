@@ -19,6 +19,12 @@
     <testsuite name="Threads Tests">
         <directory>./tests/Threads/</directory>
     </testsuite>
+    <testsuite name="Functional Tests">
+        <directory>./tests/Controllers/</directory>
+    </testsuite>
+    <testsuite name="Response Tests">
+        <directory>./tests/Response/</directory>
+    </testsuite>
     <filter>
         <whitelist>
             <directory suffix=".php">src</directory>
