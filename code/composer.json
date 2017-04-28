@@ -21,8 +21,8 @@
   },
   "autoload": {
     "psr-4": {
-      "IVIR3zaM\\TalentTest\\": "src/",
-      "IVIR3zaM\\TalentTest\\Tests\\": "tests/"
+      "IVIR3zaM\\SimpleMoPortfolio\\": "src/",
+      "IVIR3zaM\\SimpleMoPortfolio\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "stable"
