@@ -18,6 +18,9 @@ installpkg php7.0-fpm
 installpkg php7.0-redis
 installpkg php7.0-xdebug
 installpkg php7.0-phalcon
+installpkg zip
+installpkg unzip
+installpkg php7.0-zip
 installpkg redis-server
 installpkg mysql-server
 
@@ -28,6 +31,18 @@ installpkg nginx
 # uncomment bellow if there is a problem with redis service start on startup
 #update-rc.d redis-server remove
 #update-rc.d redis-server start 80 2 3 4 5 . stop 20 0 1 6 .
+
+# installing composer global
+curl -Ss https://getcomposer.org/installer | php
+mv composer.phar /usr/bin/composer
+
+
+# allocating some swap to VM for running composer smoothly
+/bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+/sbin/mkswap /var/swap.1
+/sbin/swapon /var/swap.1
+
+composer install -d ./code/
 
 cp /tmp/001-talented.conf /etc/nginx/conf.d
 service nginx restart

@@ -1,0 +1,29 @@
+{
+  "name": "ivir3zam/simple-mo-portfolio",
+  "version": "1.0",
+  "type": "project",
+  "description": "This is a portfolio test project about catch and save Mobile Originated SMS (MO) as many as the server can do with a Vagrant virtualization",
+  "homepage": "https://ivir3zam.github.com/",
+  "authors": [
+    {
+      "name": "Mohammad Reza Maghoul",
+      "email": "m.reza.maghool@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "ext-phalcon": ">=3.0"
+  },
+  "require-dev": {
+    "phalcon/incubator": "^3.1",
+    "phpunit/phpunit": "4.8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "IVIR3zaM\\TalentTest\\": "src/",
+      "IVIR3zaM\\TalentTest\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "stable"
+}
