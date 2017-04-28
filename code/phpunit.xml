@@ -16,6 +16,9 @@
     <testsuite name="Queue Tests">
         <directory>./tests/Queue/</directory>
     </testsuite>
+    <testsuite name="Threads Tests">
+        <directory>./tests/Threads/</directory>
+    </testsuite>
     <filter>
         <whitelist>
             <directory suffix=".php">src</directory>

@@ -2,6 +2,7 @@
 use Phalcon\Config;
 use Phalcon\Mvc\Model\Metadata\Files as MetaDataAdapter;
 use IVIR3zaM\SimpleMoPortfolio\Queue\Redis;
+use IVIR3zaM\SimpleMoPortfolio\Threads\Manager as ThreadsManager;
 
 return new Config([
     'database' => [
@@ -26,5 +27,9 @@ return new Config([
             'port' => 6379,
             'list' => 'MoList',
         ],
+    ],
+    'threads' => [
+        'class' => ThreadsManager::class,
+        'maxLoad' => 500,
     ],
 ]);

@@ -32,5 +32,12 @@ $di->setShared('queue', function () use ($di) {
     return new $class($params);
 });
 
+$di->setShared('threadsManager', function () use ($di) {
+    $config = $di->get('config');
+    $class = $config->threads->class;
+    $manager = new $class();
+    $manager->setMaxLoad($config->threads->maxLoad);
+    return $manager;
+});
 
 return $di;
