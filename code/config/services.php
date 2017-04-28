@@ -40,4 +40,12 @@ $di->setShared('threadsManager', function () use ($di) {
     return $manager;
 });
 
+$di->setShared('reporter', function() use ($di) {
+    $config = $di->get('config');
+    $class = $config->reporter->class;
+    $model = $config->reporter->model;
+    $reporter = new $class(new $model());
+    return $reporter;
+});
+
 return $di;

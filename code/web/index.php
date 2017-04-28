@@ -2,6 +2,7 @@
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Mvc\Micro;
 use IVIR3zaM\SimpleMoPortfolio\Controllers\MoController;
+use IVIR3zaM\SimpleMoPortfolio\Controllers\StatsController;
 
 try {
     require dirname(__DIR__) . '/vendor/autoload.php';
@@ -23,6 +24,14 @@ try {
         '/',
         function () {
             return (new MoController())->receiveAction();
+        }
+    );
+
+    // get a summary of stats for using in monitoring system
+    $app->get(
+        '/stats',
+        function () {
+            return (new StatsController())->summaryAction();
         }
     );
 

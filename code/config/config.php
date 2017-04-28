@@ -3,6 +3,8 @@ use Phalcon\Config;
 use Phalcon\Mvc\Model\Metadata\Files as MetaDataAdapter;
 use IVIR3zaM\SimpleMoPortfolio\Queue\Redis;
 use IVIR3zaM\SimpleMoPortfolio\Threads\Manager as ThreadsManager;
+use IVIR3zaM\SimpleMoPortfolio\Reporters\MoReporter;
+use IVIR3zaM\SimpleMoPortfolio\Models\MoModel;
 
 return new Config([
     'database' => [
@@ -31,5 +33,9 @@ return new Config([
     'threads' => [
         'class' => ThreadsManager::class,
         'maxLoad' => 500,
+    ],
+    'reporter' => [
+        'class' => MoReporter::class,
+        'model' => MoModel::class,
     ],
 ]);
