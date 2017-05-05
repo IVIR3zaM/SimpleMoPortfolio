@@ -1,6 +1,13 @@
-#  Our Talent Test
+# Simple Mo Portfolio
 
-## Instructions
+This project was a programming test for interview at a company, I did it only for using it as a portfolio about how I done projects with Phalcon and what is my insight about performance in PHP Programming. the original test case described bellow. I completed all two goals and all two bonuses. you can clone the project and see the performance results. the only change that you might keep in mind that the stats url changed from http://localhost/stats.php to http://localhost/stats
+
+### NOTE: 
+If you find the company that use this test for their interviews please don't copy any part of this project. it is important to be your self at interviews to have a success career not only a success interview.
+
+##  Our Talent Test
+
+### Instructions
 
 We expect you to be familiar with [git][1], [Vagrant][2] and [VirtualBox][3].
 
@@ -22,7 +29,7 @@ Ensure those steps work as you would expect before asking for your answer to be 
 
 One of the things we definitely do want to see are unit tests, so please do not forget those.
 
-## Intro and background info
+### Intro and background info
 
 Among others, our company provides a variety of services to which a Client can subscribe by
 simply sending a subscription request via SMS to a so-called shortcode. For example,
@@ -38,7 +45,7 @@ An example of a call through our MO API could look like this:
 
 http://localhost/index.php?msisdn=60123456789&operatorid=3&shortcodeid=8&text=ON+GAMES
 
-## Goal 1
+### Goal 1
 
 Your first goal is to transform this smelly code into production grade, quality code that follows
 modern software development practices. We can't emphasize enough the importance of this!
@@ -48,7 +55,7 @@ assume there is absolutely nothing you can do to improve the `registermo` comman
 
 Can you improve the design in such a way that it can handle several thousands of requests per second?
 
-## Goal 2
+### Goal 2
 
 There is also a stats.php file that is called periodically by our monitoring system to provide it with
 relevant performance statistics of our MO API.
@@ -57,13 +64,13 @@ The problem we are facing is that it has become very slow, something which serio
 
 Your second goal is to solve this problem and make sure that stats.php takes less than one second to run.
 
-## How to check performance
+### How to check performance
 
 A simple way of checking the performance of the MO API is to use Apache's ab tool, like this:
 
 `ab -n 1000 -c 10 "http://localhost/index.php?msisdn=60123456789&operatorid=3&shortcodeid=8&text=ON+GAMES"`
 
-## Bonus 1
+### Bonus 1
 
 In order to better integrate with our monitoring tools, we need a way to know how many MO's have been received but
 not yet processed.
@@ -71,14 +78,14 @@ not yet processed.
 Can you provide a *command line tool* that, when executed, prints out a single integer: the number of MO's received but
 not yet processed?
 
-## Bonus 2
+### Bonus 2
 
 Occasionally we get a wave of problematic MO's that fail to be processed.
 
 To ease administration, can you provide a command line tool to clear (remove) all those MO's that have been received
 but not yet processed so that we don't waste time and system resources trying to process them?
 
-# FAQ
+## FAQ
 
 * What's this binary `registermo` doing?
 
