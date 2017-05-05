@@ -5,6 +5,7 @@ use IVIR3zaM\SimpleMoPortfolio\Queue\Redis;
 use IVIR3zaM\SimpleMoPortfolio\Threads\Manager as ThreadsManager;
 use IVIR3zaM\SimpleMoPortfolio\Reporters\MoReporter;
 use IVIR3zaM\SimpleMoPortfolio\Models\MoModel;
+use IVIR3zaM\SimpleMoPortfolio\MoFactory;
 
 return new Config([
     'database' => [
@@ -38,4 +39,5 @@ return new Config([
         'class' => MoReporter::class,
         'model' => MoModel::class,
     ],
+    'factory' => MoFactory::class,
 ]);

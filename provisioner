@@ -71,3 +71,30 @@ populate_db() {
     /tmp/populate_db 10000000| mysql -u root samtt
 }
 populate_db
+
+cronjobinit() {
+    # Adds a crontab entry to run cli main task for every minute
+
+    # Cron expression
+    cron="* * * * * php /home/vagrant/code/cli.php"
+
+    # Escape all the asterisks so we can grep for it
+    cron_escaped=$(echo "$cron" | sed s/\*/\\\\*/g)
+
+    # Check if cron job already in crontab
+    crontab -l | grep "${cronescaped}"
+    if [[ $? -eq 0 ]] ;
+      then
+        echo "Crontab already exists. Exiting..."
+      else
+        # Write out current crontab into temp file
+        crontab -l > mycron
+        # Append new cron into cron file
+        echo "$cron" >> mycron
+        # Install new cron file
+        crontab mycron
+        # Remove temp file
+        rm mycron
+    fi
+}
+cronjobinit

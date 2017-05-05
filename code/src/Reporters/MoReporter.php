@@ -9,6 +9,7 @@ use DateTime;
  * Class MoReporter
  * @package IVIR3zaM\SimpleMoPortfolio\Reporters
  * @todo must implement reporter for other kinds of databases
+ * @todo must implement functional tests
  */
 class MoReporter implements MoReporterInterface
 {

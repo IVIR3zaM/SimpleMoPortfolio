@@ -48,4 +48,11 @@ $di->setShared('reporter', function() use ($di) {
     return $reporter;
 });
 
+$di->setShared('factory', function() use ($di) {
+    $config = $di->get('config');
+    $class = $config->factory;
+    $reporter = new $class();
+    return $reporter;
+});
+
 return $di;
